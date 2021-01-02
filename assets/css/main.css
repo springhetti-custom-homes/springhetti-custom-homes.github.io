@@ -65,6 +65,16 @@ body {
     padding-bottom: 80px;
 }
 
+.top-bottom-padding {
+    padding: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .top-bottom-padding {
+        padding: 80px 0;
+    }
+}
+
 @media screen and (max-width: 1201px) {
     .top-padding {
         padding: 48px 0 0 0;
