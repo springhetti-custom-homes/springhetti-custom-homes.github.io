@@ -1,0 +1,10 @@
+<div class="nav-wrapper" id="navbar">
+    <img width="200" src="assets/images/sch-logo.png" style="padding-left: 8px;"></svg>
+    <div>
+        {% for item in site.data.navigation %}
+            <a href="{{ item.link }}" {% if page.url == item.link %}class="active-link"{% endif %}>
+                {{ item.name }}
+            </a>
+        {% endfor %}
+    </div>
+</div>

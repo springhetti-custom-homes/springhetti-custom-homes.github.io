@@ -1,0 +1,22 @@
+<script src="/assets/js/home_slideshow.js"></script>
+<link rel="stylesheet" href="/assets/css/home-slideshow.css">
+
+
+<div class="home-slideshow-container">
+    <div class="slideshow-inner">
+        {% for item in site.data.home-slideshow %}
+            <div class="home-slide fade-in">
+                <img class="home-image" src='{{ item.src }}' alt="custom built home Wisconsin" />
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br/>
+
+<div style='text-align: center;'>
+    {% for item in site.data.home-slideshow %}
+        <span class="dot" onclick='currentSlide({{ forloop.index0 }})'></span>
+    {% endfor %}
+</div>
+

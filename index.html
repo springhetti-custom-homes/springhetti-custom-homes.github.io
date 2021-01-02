@@ -1,0 +1,45 @@
+---
+layout: default
+title: Home
+headerText: <p class="page-header-text">SPRINGHETTI CUSTOM HOMES</p>
+---
+<div class="content-body">
+    <div class="half-full">
+        <div class="home-content">
+            <p class="title">
+                Build the Custom Home of Your Dreams
+            </p>
+            <p class="body-text body-text-max-width">
+                Don Springhetti has been building superior custom homes in North Eastern Wisconsin since 1994. He will give you the support and guidance you need to build your dream home. With Springhetti Custom Homes LLC, you can trust that you will recieve <span class="italic">exceptional quality and outstanding value</span>.
+            </p>
+            <a class="button">Contact Us</a>
+        </div>
+    </div>
+    <div class="half-full">
+        {% include slideshow.html %}
+    </div>
+</div>
+
+<div class="section top-padding">
+    <div class="page-header" style="margin-bottom: 25px;">
+        <p class="page-header-text">Testimonials</p>
+    </div>
+    {% for quote in site.data.testimonials %}
+            <p class="quote">"{{ quote.quote }}"</p>
+            <div class="flex-break"></div>
+            <p class="quote-name">-{{ quote.name }}</p>
+    {% endfor %}
+</div>
+
+<div class="associations-wrapper">
+    <hr class="section-divider">
+    <p class="title">
+        Affiliations
+    </p>
+    <div class="associations">
+        <img class="association-image" src="assets/images/nahb-logo-color.png" alt="National Association of Home Builders" />
+        <img class="association-image" src="assets/images/hbafc_logo_main.png" alt="Home Builders Association of the Fox Cities" />
+        <img class="association-image" src="assets/images/wba_logo.png" alt="Wisconsin Builders Associations" />
+    </div>
+</div>
+
