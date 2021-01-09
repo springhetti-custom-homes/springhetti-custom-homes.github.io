@@ -1,7 +1,17 @@
 let imageInd = 0;
 let visibleRangeStart = 0;
 
-const numToShow = 4;
+const maxNumToShow = 5;
+const minNumToShow = 1;
+const numToShowIncrements = [1000, 800, 640, 475];
+
+const getNumToShowByWidth = () => {
+    const offset = numToShowIncrements.findIndex((value) => window.innerWidth >= value);
+
+    return offset !== -1 ? maxNumToShow - offset : minNumToShow;
+};
+
+let numToShow = getNumToShowByWidth();
 
 const nextImage = () => {
     imageInd += 1;
@@ -54,7 +64,7 @@ const displayImages = () => {
         galleryPhotos[i].style.display = "none";
     }
 
-    for (let i = visibleRangeStart; i <= visibleRangeStart + numToShow; ++i) {
+    for (let i = visibleRangeStart; i < visibleRangeStart + numToShow; ++i) {
         galleryPhotos[i].style.display = "block";
     }
 };
@@ -69,18 +79,18 @@ window.addEventListener("load", () => {
 let xDown = null;
 let yDown = null;
 
-function getTouches(evt) {
+const getTouches = (evt) => {
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }
 
-function handleTouchStart(evt) {
+const handleTouchStart = (evt) => {
     const firstTouch = getTouches(evt)[0];
     xDown = firstTouch.clientX;
     yDown = firstTouch.clientY;
 };
 
-function handleTouchMove(evt) {
+const handleTouchMove = (evt) => {
     if ( ! xDown || ! yDown ) {
         return;
     }
@@ -104,6 +114,16 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
+
+window.addEventListener('resize', () => {
+    const oldNumToShow = numToShow;
+    const newNumToShow = getNumToShowByWidth();
+
+    if (oldNumToShow !== newNumToShow) {
+        numToShow = newNumToShow;
+        displayImages();
+    }
+});
 
 updateShownImage();
 displayImages();

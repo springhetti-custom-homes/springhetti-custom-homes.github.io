@@ -17,16 +17,16 @@ permalink: /gallery
     {% endfor %}
     <div class="display-photo-buttons">
         <div class="button-container">
-            <button class="image-button" onclick="prevImage()">&#60;</button>
+            <button class="image-button" onclick="prevImage()"><span>&#60;</span></button>
         </div>
         <div class="button-container">
-            <button class="image-button" onclick="nextImage()">&#62;</button>
+            <button class="image-button" onclick="nextImage()"><span>&#62;</span></button>
         </div>
     </div>
 </div>
 
 <div class="gallery-photos">
-    <button class="image-button" onclick="prevVisibleRange()">&#60;</button>
+    <button class="image-button" onclick="prevVisibleRange()"><span>&#60;</span></button>
     <div class="photos-container">
         {% for item in site.data.gallery-images %}
             <div>
@@ -34,7 +34,7 @@ permalink: /gallery
             </div>
         {% endfor %}
     </div>
-    <button class="image-button" onclick="nextVisibleRange()">&#62;</button>
+    <button class="image-button" onclick="nextVisibleRange()"><span>&#62;</span></button>
 </div>
 
 <script src="/assets/js/gallery_image_display.js"></script>

@@ -325,8 +325,8 @@ button:focus, input[type="button"]:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px;
     overflow: hidden;
+    padding-bottom: 100px;
 }
 
 .gallery-photo {
@@ -351,15 +351,17 @@ button:focus, input[type="button"]:focus {
 }
 
 .display-photo {
-    max-width: 700px;
-    max-height: 700px;
+    height: 100%;
+    max-width: 1000px;
+    object-fit: cover;
 }
 
 .display-photo-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 750px;
+    height: 600px;
+    width: 1000px;
 }
 
 .button-container {
@@ -393,23 +395,9 @@ button:focus, input[type="button"]:focus {
         max-height: 125px;
     }
 
-    .display-photos {
-        max-height: 670px;
-    }
-
-    .display-photo {
-        max-height: 600px;
-        max-width: 600px;
-    }
-
     .display-photo-container {
-        height: 700px;
-    }
-
-    .image-button {
-        padding: 7.5px 15px;
-        max-height: 36px;
-        max-width: 75px;
+        height: 500px;
+        width: 1000px;
     }
 }
 
@@ -422,20 +410,17 @@ button:focus, input[type="button"]:focus {
         width: 130px;
         max-height: 100px;
     }
+}
 
-    .display-photos {
-        max-height: 570px;
+@media screen and (max-width: 890px) {
+    .gallery-photos {
+        max-height: 450px;
+        padding-bottom: 150px;
     }
 
-    .display-photo {
-        max-height: 500px;
-        max-width: 500px;
-    }
-
-    .image-button {
-        padding: 5.5px 12px;
-        max-height: 24px;
-        max-width: 50px;
+    .display-photo-container {
+        height: 300px;
+        width: 1000px;
     }
 }
 
@@ -444,26 +429,6 @@ button:focus, input[type="button"]:focus {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-}
-
-@media screen and (max-width: 890px) {
-    .display-photos {
-        max-height: 800px;
-    }
-    .display-photo {
-        max-height: 800px;
-        max-width: 400px;
-    }
-    .display-photo-container {
-        height: 800px
-    }
-    .photos-container {
-        flex-wrap: wrap;
-    }
-    .gallery-photos {
-        max-height: 450px;
-        padding-bottom: 150px;
-    }
 }
 
 .display-photo-buttons {
