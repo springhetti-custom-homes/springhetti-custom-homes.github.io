@@ -17,6 +17,18 @@
     height: 500px;
 }
 
+@media screen and (max-width: 890px) {
+    .home-image {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .home-image {
+        height: 250px;
+    }
+}
+
 .fade-in {
     animation: fadeIn ease 3s;
     -webkit-animation: fadeIn ease 3s;
