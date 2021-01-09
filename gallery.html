@@ -4,7 +4,12 @@ title: Photo Gallery
 headerText: <p class="page-header-text">Photo Gallery</p>
 permalink: /gallery
 ---
-<div class="display-photos">
+<div class="center-flex">
+    <p class="body-text body-text-max-width">
+        Please enjoy looking through our photo gallery, which displays the exceptional quality of Don's work and the satisfaction you can expect with you Springhetti Custom Home.
+    </p>
+</div>
+<div class="display-photos" id="display-photos">
     {% for item in site.data.gallery-images %}
         <div class="display-photo-container">
             <img class="display-photo" src="{{ item.path }}" />

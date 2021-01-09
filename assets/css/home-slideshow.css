@@ -1,5 +1,6 @@
 .home-slideshow-container {
     max-width: 1000px;
+    height: auto;
     position: relative;
     display: flex;
     align-items: center;
